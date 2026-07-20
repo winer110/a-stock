@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A 股分析报告中心</title>
+<style>
+  :root {
+    --bg: #0f1724;
+    --card-bg: #1a2332;
+    --card-hover: #1f2b3d;
+    --border: #2a3a52;
+    --gold: #f0c060;
+    --cyan: #38bdf8;
+    --green: #34d399;
+    --red: #f87171;
+    --text: #d0d8e8;
+    --text-dim: #8899aa;
+    --text-bright: #f0f4fa;
+    --radius: 12px;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  /* 微妙的网格背景 */
+  body::before {
+    content: ''; position: fixed; inset:0; z-index:0; pointer-events:none; opacity:0.04;
+    background-image: linear-gradient(rgba(56,189,248,.3) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(56,189,248,.3) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .container { max-width: 1200px; margin: 0 auto; padding: 20px 24px 40px; position: relative; z-index: 1; }
+
+  /* Header */
+  .header {
+    text-align: center; padding: 48px 20px 36px;
+    border-bottom: 1px solid var(--border); margin-bottom: 36px;
+  }
+  .header h1 { font-size: 2.4em; color: var(--gold); font-weight: 700; letter-spacing: 2px; }
+  .header p { color: var(--text-dim); margin-top: 8px; font-size: 1.05em; }
+  .header .update { color: var(--cyan); font-size: 0.85em; margin-top: 6px; }
+
+  /* Stats */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 40px; }
+  .stat-card {
+    background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 24px 20px; text-align: center; transition: transform .2s, box-shadow .2s, background .2s;
+    position: relative; overflow: hidden;
+  }
+  .stat-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,.4); background: var(--card-hover); }
+  .stat-card .num { font-size: 2.4em; font-weight: 800; color: var(--gold); line-height: 1.2; }
+  .stat-card .label { color: var(--text-dim); font-size: 0.88em; margin-top: 4px; }
+  .stat-card::after {
+    content: '';
+    position: absolute; top: -50%; right: -50%; width: 100%; height: 100%;
+    background: radial-gradient(circle, rgba(240,192,96,.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* Section */
+  .section { margin-bottom: 40px; }
+  .section-title {
+    font-size: 1.35em; color: var(--cyan); font-weight: 700; margin-bottom: 16px;
+    display: flex; align-items: center; gap: 10px;
+    border-left: 4px solid var(--gold); padding-left: 14px;
+  }
+  .section-title .badge {
+    background: rgba(240,192,96,.15); color: var(--gold); font-size: 0.65em;
+    padding: 3px 10px; border-radius: 999px; font-weight: 500;
+  }
+
+  /* Core cards */
+  .core-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .core-card {
+    background: linear-gradient(135deg, #1a2a3a 0%, #1f3350 100%);
+    border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 24px;
+    text-decoration: none; color: var(--text); display: block;
+    transition: transform .2s, box-shadow .2s, border-color .2s;
+    position: relative; overflow: hidden;
+  }
+  .core-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,.5); border-color: var(--gold); }
+  .core-card h3 { font-size: 1.2em; color: var(--gold); word-break: break-all; }
+  .core-card p { color: var(--text-dim); font-size: 0.9em; margin-top: 6px; }
+  .core-card .visit {
+    display: inline-block; margin-top: 14px; padding: 8px 22px;
+    background: rgba(240,192,96,.12); color: var(--gold); border-radius: 8px;
+    font-weight: 600; font-size: 0.9em; transition: background .2s;
+  }
+  .core-card:hover .visit { background: rgba(240,192,96,.22); }
+
+  /* Treemap grid */
+  .treemap-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+  .treemap-card {
+    background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 18px 16px; text-decoration: none; color: var(--text); display: flex;
+    align-items: center; justify-content: space-between;
+    transition: transform .2s, box-shadow .2s, background .2s, border-color .2s;
+  }
+  .treemap-card:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,.35); background: var(--card-hover); border-color: var(--cyan); }
+  .treemap-card .date { font-weight: 600; color: var(--text-bright); font-size: 0.95em; }
+  .treemap-card .view {
+    padding: 5px 14px; border-radius: 6px; background: rgba(56,189,248,.12);
+    color: var(--cyan); font-size: 0.8em; font-weight: 600; white-space: nowrap;
+    transition: background .2s;
+  }
+  .treemap-card:hover .view { background: rgba(56,189,248,.22); }
+
+  /* JSON group */
+  .json-date-group { margin-bottom: 20px; }
+  .json-date-title { font-size: 1em; color: var(--gold); font-weight: 600; margin-bottom: 8px; }
+  .json-links { display: flex; flex-wrap: wrap; gap: 8px; }
+  .json-link {
+    display: inline-block; padding: 6px 14px; background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 8px; color: var(--cyan); text-decoration: none; font-size: 0.88em;
+    transition: background .2s, border-color .2s, transform .2s;
+  }
+  .json-link:hover { background: var(--card-hover); border-color: var(--cyan); transform: translateY(-1px); }
+
+  /* Py scripts */
+  .py-list { display: flex; flex-wrap: wrap; gap: 10px; }
+  .py-item {
+    display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px;
+    background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px;
+    color: var(--green); font-size: 0.88em; font-family: "SF Mono","Fira Code","Consolas",monospace;
+    text-decoration: none; transition: background .2s, border-color .2s, transform .2s;
+  }
+  .py-item:hover { background: var(--card-hover); border-color: var(--green); transform: translateY(-1px); }
+
+  /* Footer */
+  .footer {
+    text-align: center; padding: 32px 20px; border-top: 1px solid var(--border); margin-top: 20px;
+    color: var(--text-dim); font-size: 0.85em;
+  }
+  .footer a { color: var(--cyan); text-decoration: none; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .core-grid { grid-template-columns: 1fr; }
+    .header h1 { font-size: 1.6em; }
+    .container { padding: 12px 14px 30px; }
+    .treemap-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  }
+  @media (max-width: 480px) {
+    .stats { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .stat-card { padding: 16px 10px; }
+    .stat-card .num { font-size: 1.6em; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <header class="header">
+    <h1>&#x1F4C8; A 股分析报告中心</h1>
+    <p>A股深度分析与连板数据追踪</p>
+    <div class="update" id="repo-update">仓库更新时间: --</div>
+  </header>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="stat-card"><div class="num">24</div><div class="label">HTML 报告</div></div>
+    <div class="stat-card"><div class="num">34</div><div class="label">JSON 数据集</div></div>
+    <div class="stat-card"><div class="num">6</div><div class="label">Python 脚本</div></div>
+    <div class="stat-card"><div class="num" id="latest-date">--</div><div class="label">最后更新</div></div>
+  </div>
+
+  <!-- 核心报告 -->
+  <div class="section">
+    <div class="section-title">&#x1F4CA; 核心报告 <span class="badge">精选</span></div>
+    <div class="core-grid">
+      <a class="core-card" href="cross_report.html">
+        <h3>cross_report.html</h3>
+        <p>交叉分析报告 &mdash; 跨股票综合对比与关联分析</p>
+        <span class="visit">查看报告 &rarr;</span>
+      </a>
+      <a class="core-card" href="飞凯材料_深度分析报告.html">
+        <h3>飞凯材料 深度分析报告</h3>
+        <p>个股深度拆解 &mdash; 基本面、技术面与资金面全景分析</p>
+        <span class="visit">查看报告 &rarr;</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- 连板 Treemap 历史归档 -->
+  <div class="section">
+    <div class="section-title">&#x1F31F; 连板 Treemap 历史归档 <span class="badge">22 个</span></div>
+    <div class="treemap-grid">
+      <a class="treemap-card" href="a_streak_treemap_2026-07-20.html"><span class="date">2026年07月20日</span><span class="view">查看</span></a>
+      <a class="treemap-card" href="a_streak_treemap_2026-07-17.html"><span class="date">2026年07月17日</span><span class="view">查看</span></a>
+      <a class="treemap-card" href="a_streak_treemap_2026-07-16.html"><span class="date">2026年07月16日</span><span class="view">查看</span></a>
+      <a class="treemap-card" href="a_streak_treemap_2026-07-15.html"><span class="date">2026年07月15日</span><span class="view">查看</span></a>
+      <a class="treemap-card" href="a_streak_treemap_2026-07-14.html"><span class="date">2026年07月14日</span><span class="view">查看</span></a>
+      <a class="treemap-card" href="a_streak_treemap_2026-07-13.html"><span class="date">2026年07月13日</span><span class="view">查看</span></a>
+      <a class="treemap-card" href="a_streak_treemap_2026-07-10.html"><span class="date">2026年07月10日</span><span class="view">查看</span></a>
+      <a class="treemap-card" href="a_streak_treemap_2026-07-09.html"><span class="date">2026年07月09日</span><span class="view">查看</span></a>
+      <a class="treemap-card" href="a_streak_treemap_2026-07-08.html"><span class="date">2026年07月08日</span><span class="view">查看</span></a>
+      <a class="treemap-card" href="a_streak_treemap_2026-07-07.html"><span class="date">2026年07月07日</span><span class="view">查看</span></a>
+      <a class="treemap-card" href="a_streak_treemap_2026-07-06.html"><span class="date">2026年07月06日</span><span class="view">查看</span></a>
+      <a class="treemap-card" href="a_streak_treemap_2026-07-03.html"><span class="date">2026年07月03日</span><span class="view">查看</span></a>
+      <a class="treemap-card" href="a_streak_treemap_2026-07-02.html"><span class="date">2026年07月02日</span><span class="view">查看</span></a>
+      <a class="treemap-card" href="a_streak_treemap_2026-07-01.html"><span class="date">2026年07月01日</span><span class="view">查看</span></a>
+      <a class="treemap-card" href="a_streak_treemap_2026-06-30.html"><span class="date">2026年06月30日</span><span class="view">查看</span></a>
+      <a class="treemap-card" href="a_streak_treemap_2026-06-29.html"><span class="date">2026年06月29日</span><span class="view">查看</span></a>
+      <a class="treemap-card" href="a_streak_treemap_2026-06-26.html"><span class="date">2026年06月26日</span><span class="view">查看</span></a>
+      <a class="treemap-card" href="a_streak_treemap_2026-06-25.html"><span class="date">2026年06月25日</span><span class="view">查看</span></a>
+      <a class="treemap-card" href="a_streak_treemap_2026-06-24.html"><span class="date">2026年06月24日</span><span class="view">查看</span></a>
+      <a class="treemap-card" href="a_streak_treemap_2026-06-23.html"><span class="date">2026年06月23日</span><span class="view">查看</span></a>
+      <a class="treemap-card" href="a_streak_treemap_2026-06-22.html"><span class="date">2026年06月22日</span><span class="view">查看</span></a>
+      <a class="treemap-card" href="a_streak_treemap_2026-06-21.html"><span class="date">2026年06月21日</span><span class="view">查看</span></a>
+    </div>
+  </div>
+
+  <!-- 数据资源 -->
+  <div class="section">
+    <div class="section-title">&#x1F4BE; 数据资源 (JSON) <span class="badge">34 个</span></div>
+    <div class="json-date-group">
+      <div class="json-date-title">2026-07-20</div>
+      <div class="json-links"><a class="json-link" href="sina_stocks_0_2026-07-20.json" target="_blank" download>sina_stocks_0</a><a class="json-link" href="sina_stocks_1_2026-07-20.json" target="_blank" download>sina_stocks_1</a></div>
+    </div>
+    <div class="json-date-group">
+      <div class="json-date-title">2026-07-17</div>
+      <div class="json-links"><a class="json-link" href="sina_stocks_0_2026-07-17.json" target="_blank" download>sina_stocks_0</a><a class="json-link" href="sina_stocks_1_2026-07-17.json" target="_blank" download>sina_stocks_1</a></div>
+    </div>
+    <div class="json-date-group">
+      <div class="json-date-title">2026-07-16</div>
+      <div class="json-links"><a class="json-link" href="sina_stocks_0_2026-07-16.json" target="_blank" download>sina_stocks_0</a><a class="json-link" href="sina_stocks_1_2026-07-16.json" target="_blank" download>sina_stocks_1</a></div>
+    </div>
+    <div class="json-date-group">
+      <div class="json-date-title">2026-07-15</div>
+      <div class="json-links"><a class="json-link" href="sina_stocks_0_2026-07-15.json" target="_blank" download>sina_stocks_0</a><a class="json-link" href="sina_stocks_1_2026-07-15.json" target="_blank" download>sina_stocks_1</a></div>
+    </div>
+    <div class="json-date-group">
+      <div class="json-date-title">2026-07-14</div>
+      <div class="json-links"><a class="json-link" href="sina_stocks_0_2026-07-14.json" target="_blank" download>sina_stocks_0</a><a class="json-link" href="sina_stocks_1_2026-07-14.json" target="_blank" download>sina_stocks_1</a></div>
+    </div>
+    <div class="json-date-group">
+      <div class="json-date-title">2026-07-13</div>
+      <div class="json-links"><a class="json-link" href="sina_stocks_0_2026-07-13.json" target="_blank" download>sina_stocks_0</a><a class="json-link" href="sina_stocks_1_2026-07-13.json" target="_blank" download>sina_stocks_1</a></div>
+    </div>
+    <div class="json-date-group">
+      <div class="json-date-title">2026-07-10</div>
+      <div class="json-links"><a class="json-link" href="sina_stocks_0_2026-07-10.json" target="_blank" download>sina_stocks_0</a><a class="json-link" href="sina_stocks_1_2026-07-10.json" target="_blank" download>sina_stocks_1</a></div>
+    </div>
+    <div class="json-date-group">
+      <div class="json-date-title">2026-07-09</div>
+      <div class="json-links"><a class="json-link" href="sina_stocks_0_2026-07-09.json" target="_blank" download>sina_stocks_0</a><a class="json-link" href="sina_stocks_1_2026-07-09.json" target="_blank" download>sina_stocks_1</a></div>
+    </div>
+    <div class="json-date-group">
+      <div class="json-date-title">2026-07-08</div>
+      <div class="json-links"><a class="json-link" href="sina_stocks_0_2026-07-08.json" target="_blank" download>sina_stocks_0</a><a class="json-link" href="sina_stocks_1_2026-07-08.json" target="_blank" download>sina_stocks_1</a></div>
+    </div>
+    <div class="json-date-group">
+      <div class="json-date-title">2026-07-07</div>
+      <div class="json-links"><a class="json-link" href="sina_stocks_0_2026-07-07.json" target="_blank" download>sina_stocks_0</a><a class="json-link" href="sina_stocks_1_2026-07-07.json" target="_blank" download>sina_stocks_1</a></div>
+    </div>
+    <div class="json-date-group">
+      <div class="json-date-title">2026-07-06</div>
+      <div class="json-links"><a class="json-link" href="sina_stocks_0_2026-07-06.json" target="_blank" download>sina_stocks_0</a><a class="json-link" href="sina_stocks_1_2026-07-06.json" target="_blank" download>sina_stocks_1</a></div>
+    </div>
+    <div class="json-date-group">
+      <div class="json-date-title">2026-07-03</div>
+      <div class="json-links"><a class="json-link" href="sina_stocks_0_2026-07-03.json" target="_blank" download>sina_stocks_0</a><a class="json-link" href="sina_stocks_1_2026-07-03.json" target="_blank" download>sina_stocks_1</a></div>
+    </div>
+    <div class="json-date-group">
+      <div class="json-date-title">2026-07-02</div>
+      <div class="json-links"><a class="json-link" href="sina_stocks_0_2026-07-02.json" target="_blank" download>sina_stocks_0</a><a class="json-link" href="sina_stocks_1_2026-07-02.json" target="_blank" download>sina_stocks_1</a></div>
+    </div>
+    <div class="json-date-group">
+      <div class="json-date-title">2026-07-01</div>
+      <div class="json-links"><a class="json-link" href="sina_stocks_0_2026-07-01.json" target="_blank" download>sina_stocks_0</a><a class="json-link" href="sina_stocks_1_2026-07-01.json" target="_blank" download>sina_stocks_1</a></div>
+    </div>
+    <div class="json-date-group">
+      <div class="json-date-title">2026-06-30</div>
+      <div class="json-links"><a class="json-link" href="sina_stocks_0_2026-06-30.json" target="_blank" download>sina_stocks_0</a><a class="json-link" href="sina_stocks_1_2026-06-30.json" target="_blank" download>sina_stocks_1</a></div>
+    </div>
+    <div class="json-date-group">
+      <div class="json-date-title">2026-06-29</div>
+      <div class="json-links"><a class="json-link" href="sina_stocks_0_2026-06-29.json" target="_blank" download>sina_stocks_0</a><a class="json-link" href="sina_stocks_1_2026-06-29.json" target="_blank" download>sina_stocks_1</a></div>
+    </div>
+    <div class="json-date-group">
+      <div class="json-date-title">2026-06-26</div>
+      <div class="json-links"><a class="json-link" href="sina_stocks_0_2026-06-26.json" target="_blank" download>sina_stocks_0</a><a class="json-link" href="sina_stocks_1_2026-06-26.json" target="_blank" download>sina_stocks_1</a></div>
+    </div>
+  </div>
+
+  <!-- Python 脚本 -->
+  <div class="section">
+    <div class="section-title">&#x1F40D; Python 脚本 <span class="badge">6 个</span></div>
+    <div class="py-list">
+      <a class="py-item" href="a_streak_treemap.py">a_streak_treemap.py</a>
+      <a class="py-item" href="a_streak_treemap copy.py">a_streak_treemap copy.py</a>
+      <a class="py-item" href="analyze_stock.py">analyze_stock.py</a>
+      <a class="py-item" href="chanlun-wyckoff-fupan.py">chanlun-wyckoff-fupan.py</a>
+      <a class="py-item" href="convert_md_to_html.py">convert_md_to_html.py</a>
+      <a class="py-item" href="cross_analysis.py">cross_analysis.py</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Powered by Marvis File Agent &nbsp;|&nbsp; Data sourced from Sina Finance</p>
+    <p style="margin-top:4px;">仓库地址：<a href="https://github.com/lidatian/a_stock" target="_blank">github.com/lidatian/a_stock</a></p>
+  </footer>
+</div>
+
+<script>
+// 页面加载后填入"最后更新"日期
+(function() {
+  var now = new Date();
+  var y = now.getFullYear();
+  var m = String(now.getMonth() + 1).padStart(2, '0');
+  var d = String(now.getDate()).padStart(2, '0');
+  var dateStr = y + '年' + m + '月' + d + '日';
+  document.getElementById('latest-date').textContent = m + '-' + d;
+  document.getElementById('repo-update').textContent = '仓库更新时间: ' + dateStr;
+})();
+</script>
+</body>
+</html>
