@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>飞凯材料(300398) 深度技术分析报告</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; background: #0f1117; color: #e1e4e8; padding: 24px; line-height: 1.8; }
+.container { max-width: 900px; margin: 0 auto; }
+.header { background: linear-gradient(135deg, #1a1e2b,#252a3a); border-radius: 16px; padding: 28px 32px; margin-bottom: 24px; border: 1px solid #2a3040; }
+.header h1 { font-size: 24px; color: #fff; margin-bottom: 6px; }
+.header .sub { color: #8b949e; font-size: 14px; }
+.price-block { display: flex; gap: 24px; margin-top: 16px; flex-wrap: wrap; }
+.price-item { text-align: center; }
+.price-item .val { font-size: 28px; font-weight: 700; }
+.price-item .lbl { font-size: 12px; color: #8b949e; margin-top: 2px; }
+.down { color: #f85149; }
+.up { color: #3fb950; }
+.warn { color: #d2991d; }
+.card { background: #161b22; border-radius: 12px; padding: 24px 28px; margin-bottom: 20px; border: 1px solid #21262d; }
+.card h2 { font-size: 18px; color: #58a6ff; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid #21262d; }
+.card h3 { font-size: 15px; color: #d2a8ff; margin: 16px 0 10px; }
+.point { margin: 8px 0; padding-left: 16px; border-left: 3px solid #30363d; }
+.point.bull { border-left-color: #3fb950; }
+.point.bear { border-left-color: #f85149; }
+.point.neutral { border-left-color: #d2991d; }
+.tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px; margin-right: 4px; }
+.tag-red { background: #da363320; color: #f85149; }
+.tag-green { background: #3fb95020; color: #3fb950; }
+.tag-yellow { background: #d2991d20; color: #d2991d; }
+.phase-flow { display: flex; align-items: center; gap: 0; margin: 16px 0; overflow-x: auto; padding: 8px 0; }
+.phase { padding: 10px 16px; border-radius: 8px; font-size: 13px; white-space: nowrap; text-align: center; min-width: 80px; }
+.phase.acc { background: #3fb95015; color: #3fb950; border: 1px solid #3fb95040; }
+.phase.markup { background: #58a6ff15; color: #58a6ff; border: 1px solid #58a6ff40; }
+.phase.dist { background: #f8514915; color: #f85149; border: 1px solid #f8514940; }
+.phase.md { background: #d2991d15; color: #d2991d; border: 1px solid #d2991d40; }
+.arrow { color: #484f58; font-size: 18px; margin: 0 4px; }
+.level-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; }
+.level-table th { background: #21262d; color: #8b949e; padding: 8px 12px; text-align: left; border-bottom: 1px solid #30363d; }
+.level-table td { padding: 8px 12px; border-bottom: 1px solid #21262d; }
+.level-table tr:hover { background: #1c2128; }
+.news-list { list-style: none; }
+.news-list li { padding: 8px 0; border-bottom: 1px solid #21262d; font-size: 13px; }
+.news-list li:last-child { border-bottom: none; }
+.news-date { color: #8b949e; margin-right: 8px; font-size: 12px; }
+.kv { display: flex; flex-wrap: wrap; gap: 6px 20px; margin: 8px 0; }
+.kv-item { font-size: 13px; }
+.kv-item .key { color: #8b949e; }
+.kv-item .val { color: #e1e4e8; font-weight: 600; }
+.footer { text-align: center; color: #484f58; font-size: 12px; margin-top: 24px; padding: 16px; }
+.summary-box { background: #1c2128; border-radius: 8px; padding: 16px 20px; margin: 12px 0; font-size: 14px; border: 1px solid #30363d; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- Header -->
+<div class="header">
+<h1>飞凯材料 300398 · 深度技术分析</h1>
+<div class="sub">缠论 + 威科夫理论 + 量价关系 · 2026年7月7日盘中</div>
+<div class="price-block">
+<div class="price-item"><div class="val down">48.88</div><div class="lbl">现价</div></div>
+<div class="price-item"><div class="val down">-1.87%</div><div class="lbl">今日涨幅</div></div>
+<div class="price-item"><div class="val down">-20.84%</div><div class="lbl">5日涨幅</div></div>
+<div class="price-item"><div class="val">4.42%</div><div class="lbl">换手率</div></div>
+<div class="price-item"><div class="val down">-1.11亿</div><div class="lbl">主力净流入</div></div>
+</div>
+</div>
+
+<!-- 一、走势全景 -->
+<div class="card">
+<h2>一、走势全景：从65到48的急速下杀</h2>
+<div class="phase-flow">
+<div class="phase acc">吸筹区<br>35-40<br>5/26-6/5</div><div class="arrow">→</div>
+<div class="phase markup">主升浪<br>40-65<br>6/8-6/26</div><div class="arrow">→</div>
+<div class="phase dist">派发区<br>65-60<br>6/29-7/1</div><div class="arrow">→</div>
+<div class="phase md">下跌段<br>60→48<br>7/2-至今</div>
+</div>
+
+<div class="kv">
+<div class="kv-item"><span class="key">区间最高</span> <span class="val up">65.31</span> (6/29盘中)</div>
+<div class="kv-item"><span class="key">区间最低</span> <span class="val down">34.28</span> (6/2)</div>
+<div class="kv-item"><span class="key">阶段涨幅</span> <span class="val up">+90.4%</span> (34.28→65.31)</div>
+<div class="kv-item"><span class="key">回撤幅度</span> <span class="val down">-25.2%</span> (65.31→48.88)</div>
+<div class="kv-item"><span class="key">量比</span> <span class="val">0.64</span> (缩量明显)</div>
+<div class="kv-item"><span class="key">委比</span> <span class="val warn">+36%</span> (买盘挂单多于卖盘)</div>
+</div>
+
+<div class="summary-box">
+6月2日触及34.28低点后，启动一波凌厉的主升浪，7个交易日拉升近90%至65.31。此后连续7天回撤超25%，目前价格回到48.88，正处在前期6月22日收盘价附近。
+</div>
+</div>
+
+<!-- 二、缠论分析 -->
+<div class="card">
+<h2>二、缠论视角</h2>
+
+<h3>2.1 笔与线段结构</h3>
+<div class="point bull">
+<strong>向上笔（已完成）</strong>：6/2低点34.28 → 6/26/29高点63.95/65.31<br>
+该笔持续约4周，涨幅90%，内部包含完整的小级别推动结构。6/24单日涨停+19.2%是典型的笔内加速段。
+</div>
+<div class="point bear">
+<strong>向下笔（进行中）</strong>：6/29高点65.31 → 当前48.88<br>
+已持续6个交易日，跌幅25%，内部呈现清晰的5浪推动下跌（小级别）。目前尚未出现底分型确认，向下笔仍在延续。
+</div>
+
+<h3>2.2 中枢识别与关键位</h3>
+<table class="level-table">
+<tr><th>级别</th><th>中枢区间</th><th>含义</th></tr>
+<tr><td>日线中枢</td><td>40-46（6/3~6/18构筑）</td><td>主升浪的蓄力平台，中枢上沿45.54是当前最重要的支撑参考</td></tr>
+<tr><td>次级别中枢</td><td>54-62（6/24~6/29构筑）</td><td>顶部派发区间，已跌破中枢下沿54，构成强压力区</td></tr>
+</table>
+
+<h3>2.3 缺口分析</h3>
+<div class="point warn">
+6/24日K存在一个巨大跳空缺口：<strong>45.35 → 55.38（跳空+9.5元）</strong><br>
+当前价格48.88正在回补这一缺口。缠论中，突破性缺口回补后若能在缺口上沿（45.35）获得支撑，则构成第三类买点。
+</div>
+
+<h3>2.4 买卖点判断</h3>
+<div class="point bull">
+<strong>潜在第三类买点</strong>（待确认）：若价格在45-47区域止跌，形成底分型+放量阳线确认，则构成对日线中枢（40-46）的第三类买点。前提是必须站稳45.54（中枢上沿）。
+</div>
+<div class="point bear">
+<strong>第一类卖点已过</strong>：6/29冲高65.31后回落，长上影+巨量，构成经典一卖。目前二卖（反弹不过前高）和三卖（跌破中枢后反抽）都尚未出现，说明下跌可能还有空间。
+</div>
+</div>
+
+<!-- 三、威科夫分析 -->
+<div class="card">
+<h2>三、威科夫理论分析</h2>
+
+<h3>3.1 吸筹区（Accumulation）— 5/26 ~ 6/5</h3>
+<div class="point bull">
+<strong>SC（卖出高潮）</strong>：6/1-6/2，价格从40跌至34.28，成交量从69M骤降至33M。低量+低点 = 卖压枯竭信号（Selling Climax）。<br>
+<strong>Spring（弹簧效应）</strong>：6/2下探34.28后迅速收回至35.53，形成弹簧。随后6/3放量长阳（+5.3%），确认弹簧有效。<br>
+<strong>LPS（最后支撑点）</strong>：6/8回踩39.75不破前低，构成LPS，是威科夫理论中最理想的加仓位置。
+</div>
+
+<h3>3.2 主升浪（Markup）— 6/9 ~ 6/26</h3>
+<div class="point bull">
+量价配合完美：每一根阳线成交量递增，典型的「价升量增」。6/24单日涨停伴随105M成交量，是主升浪的高潮。从威科夫角度，这是健康的上涨结构。
+</div>
+
+<h3>3.3 派发区（Distribution）— 6/29 ~ 7/1 ⚠️ 关键转折</h3>
+<div class="point bear">
+<strong>UTAD（上冲后派发）</strong>：6/29是教科书级UTAD——<br>
+① 开盘62附近，盘中急拉到65.31历史新高<br>
+② 瞬间被砸回，收盘64.26，留下极长上影线<br>
+③ 成交量134M为全程最高——天量天价不同步<br>
+→ 威科夫核心法则"努力 vs 结果"：多头的巨大努力（天量）换不来价格上涨，说明聪明钱在高位派发。
+</div>
+<div class="point bear">
+<strong>SOW（弱势信号）</strong>：7/2跳空低开（从60→55.99），跌破60整数关口，确认派发有效。7/3再跌7.12%，加速离开派发区间。
+</div>
+
+<h3>3.4 当前阶段判定：Markdown（下跌段）</h3>
+<div class="point bear">
+进入威科夫下跌周期。但注意积极信号：<br>
+① 成交量从134M→70M→52M→25M，<strong>缩量下跌</strong>说明主动卖盘在减少<br>
+② 今日委比+36%，买盘挂单多于卖盘<br>
+③ 价格回到前期吸筹区上沿（48附近），可能触发支撑<br>
+→ 当前处于下跌趋势，但已出现"卖压衰减"的早期迹象。真正止跌需要等待Spring或SOS（强势信号）确认。
+</div>
+</div>
+
+<!-- 四、量价关系 -->
+<div class="card">
+<h2>四、量价关系深度解析</h2>
+
+<h3>4.1 量价四阶段对照</h3>
+<table class="level-table">
+<tr><th>阶段</th><th>日期</th><th>价格区间</th><th>日均量</th><th>量价关系</th><th>判断</th></tr>
+<tr><td>吸筹</td><td>5/26-6/5</td><td>34-42</td><td>55M</td><td>价跌量缩→价涨量增</td><td><span class="tag tag-green">健康</span></td></tr>
+<tr><td>主升</td><td>6/8-6/26</td><td>39-63</td><td>88M</td><td>价升量增，完美配合</td><td><span class="tag tag-green">强劲</span></td></tr>
+<tr><td>派发</td><td>6/29-7/1</td><td>60-65</td><td>106M</td><td>天量滞涨，上影线</td><td><span class="tag tag-red">危险</span></td></tr>
+<tr><td>下跌</td><td>7/2-至今</td><td>48-60</td><td>62M→25M</td><td>价跌量缩，卖压递减</td><td><span class="tag tag-yellow">观望</span></td></tr>
+</table>
+
+<h3>4.2 关键量价信号</h3>
+<div class="point bear">
+<strong>6/29 天量长上影</strong>：134M成交量创全程最高，但价格冲高回落，收长上影。这是最强烈的派发信号。类比威科夫的"购买高潮（BC）"+ UTAD组合。
+</div>
+<div class="point warn">
+<strong>缩量阴跌</strong>：从7/3到7/7，成交量从70M→52M→25M持续萎缩。缩量下跌本身是"卖压在减少"的信号，但同时也是"没有买盘愿意接"的表现。真正见底需要一根放量阳线来确认买方回归。
+</div>
+<div class="point warn">
+<strong>今日盘口信号</strong>：买一48.88挂单1600手 vs 卖一48.89挂单600手，买盘更深但差距不大。整体委比+36%偏正面，但这可能是"托单"而非真实买入意愿。
+</div>
+</div>
+
+<!-- 五、资讯面 -->
+<div class="card">
+<h2>五、核心资讯梳理</h2>
+<ul class="news-list">
+<li><span class="news-date">7/2</span><span class="tag tag-yellow">分红</span> 2025年度权益分派：每10股派0.75元，7/9除权除息（除权价约-0.075元/股）</li>
+<li><span class="news-date">6/26</span><span class="tag tag-red">澄清</span> 股票交易异常波动公告：TGV湿电子化学品暂未实现大批量供货，相关业务尚未形成规模化营收</li>
+<li><span class="news-date">6/23</span><span class="tag tag-red">减持</span> 控股股东及其一致行动人股份减持计划预披露公告</li>
+<li><span class="news-date">6/18</span><span class="tag tag-green">量产</span> 半导体制造及先进封装领域的锡球、EMC、光刻胶及湿电子化学品均已实现量产</li>
+<li><span class="news-date">6/15</span><span class="tag tag-green">提价</span> 光纤UV涂层自6/15起提价15%-45%，受益于AI算力光通信高景气</li>
+<li><span class="news-date">Q1</span><span class="tag tag-green">业绩</span> 2026年Q1：营收8.73亿(+24.56%)，归母净利润1.31亿(+9.57%)</li>
+</ul>
+
+<h3>资讯综合判断</h3>
+<div class="summary-box">
+<strong>利好面</strong>：光纤UV涂层提价(6/15)、半导体材料全面量产(6/18)、绑定奕成科技PLP产线、ALD钼前驱体送样SK海力士/三星。<br>
+<strong>利空面</strong>：控股股东减持计划(6/23)、TGV湿电子化学品尚未形成营收(6/26澄清)、股价短期暴涨后被监管发异动公告。<br>
+<strong>关键矛盾</strong>：基本面持续向好（量产+提价+国产替代），但股价短期暴涨90%后遭遇大股东减持+异动公告+技术性回调三重压力。当前下跌更多是获利盘回吐+情绪降温，而非基本面恶化。
+</div>
+</div>
+
+<!-- 六、综合研判 -->
+<div class="card">
+<h2>六、综合研判与关键价位</h2>
+
+<h3>6.1 三维框架交叉验证</h3>
+<table class="level-table">
+<tr><th>框架</th><th>当前信号</th><th>方向</th></tr>
+<tr><td>缠论</td><td>向下笔进行中，未出底分型。关注中枢上沿45.54能否形成三买</td><td><span class="tag tag-red">偏空</span></td></tr>
+<tr><td>威科夫</td><td>下跌段，成交量递减 = 卖压衰竭早期信号。等待Spring确认</td><td><span class="tag tag-yellow">中性偏空</span></td></tr>
+<tr><td>量价</td><td>缩量下跌，量比0.64，下跌动能衰减。需放量阳线反转</td><td><span class="tag tag-yellow">观望</span></td></tr>
+<tr><td>基本面</td><td>半导体材料量产+光纤提价+Q1增长，但减持+澄清构成短期压力</td><td><span class="tag tag-green">中长期偏多</span></td></tr>
+</table>
+
+<h3>6.2 关键价位</h3>
+<table class="level-table">
+<tr><th>价位</th><th>性质</th><th>依据</th></tr>
+<tr><td style="color:#f85149;font-weight:700">54.00</td><td>强压力</td><td>次级别中枢下沿，7/2跳空跌破位</td></tr>
+<tr><td style="color:#d2991d;font-weight:700">50.00</td><td>心理关口</td><td>整数位+6/24缺口附近</td></tr>
+<tr><td style="color:#3fb950;font-weight:700">45.54</td><td>核心支撑</td><td>日线中枢上沿+6/18收盘价，最关键支撑</td></tr>
+<tr><td style="color:#3fb950">42.00</td><td>强支撑</td><td>日线中枢中轨</td></tr>
+<tr><td style="color:#3fb950">39.81</td><td>极限支撑</td><td>6/12低点+中枢下沿</td></tr>
+</table>
+
+<h3>6.3 情景推演</h3>
+<div class="point bull">
+<strong>乐观情景（概率30%）</strong>：48附近止跌，放量收阳站上50，回踩确认后反弹至54-56。触发条件：成交量放大至50M以上 + 出现底分型。
+</div>
+<div class="point neutral">
+<strong>中性情景（概率45%）</strong>：在45-50区间震荡整理2-3周，消化获利盘和减持压力，逐步构筑新的中枢。7/9除权除息日可能成为变盘节点。
+</div>
+<div class="point bear">
+<strong>悲观情景（概率25%）</strong>：跌破45.54中枢上沿，继续下探至40-42区间。触发条件：大盘持续走弱 + 大股东实际减持抛压。
+</div>
+</div>
+
+<!-- 七、操作建议 -->
+<div class="card">
+<h2>七、策略参考</h2>
+<div class="summary-box" style="background:#1a1e2b;border:1px solid #d2991d40;">
+<strong>当前行情定性</strong>：短期超跌（5日-20.84%），中期处于主升浪后的深度回调，长期受益于半导体材料国产替代逻辑未变。核心矛盾是「技术面超跌 vs 大股东减持压力」。
+</div>
+<div class="point warn" style="margin-top:12px;">
+<strong>观望为主</strong>：向下笔未结束，底分型未出现，不建议左侧抄底。等待以下信号之一再考虑介入：① 放量阳线（量>50M）站上50元；② 缩量止跌+底分型确认在45-48区间；③ 7/9除权后出现填权行情。
+</div>
+<div class="point warn">
+<strong>止损参考</strong>：若持有仓位，以45.54（中枢上沿）为最后止损线，跌破则须离场观望。上方54为第一减仓位。
+</div>
+</div>
+
+<div class="footer">
+报告生成时间：2026年7月7日 12:10 | 数据来源：同花顺 THS | 本报告仅为技术分析参考，不构成投资建议
+</div>
+
+</div>
+</body>
+</html>
