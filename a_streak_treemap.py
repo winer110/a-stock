@@ -128,7 +128,7 @@ def fetch_data(po):
     stocks = fetch_stock_list_sina(asc=asc, num=300)
     
     # 保存原始数据
-    save_file(json.dumps(stocks, ensure_ascii=False), f"sina_stocks_{po}_{time.strftime('%Y-%m-%d', time.localtime())}.json")
+    save_file(json.dumps(stocks, ensure_ascii=False), f"sina_stocks_{po}_{time.strftime('%Y%m%d_%H%M', time.localtime())}.json")
 
     print(f"({len(stocks)}只)", end=" ", flush=True)
     if not stocks:
@@ -397,6 +397,90 @@ renderAll(300);
     return html
 
 
+def update_index_and_push():
+    """扫描目录下所有云图 HTML，生成 index.html，然后 git add/commit/push。"""
+    import glob
+    import re
+
+    print("\n📋 正在更新 index.html ...")
+    html_files = sorted(
+        glob.glob(os.path.join(BASE_DIR, "a_streak_treemap_*.html")),
+        reverse=True
+    )
+
+    # 构建 index.html
+    links = []
+    for f in html_files:
+        bn = os.path.basename(f)
+        # 提取时间戳: a_streak_treemap_YYYYmmdd_HHMM.html
+        m = re.match(r"a_streak_treemap_(\d{8})_(\d{4})\.html", bn)
+        if m:
+            d = m.group(1)
+            t = m.group(2)
+            label = f"{d[:4]}-{d[4:6]}-{d[6:8]} {t[:2]}:{t[2:4]}"
+        else:
+            label = bn
+        links.append((label, bn))
+
+    # 按日期分组
+    from collections import defaultdict
+    groups = defaultdict(list)
+    for label, bn in links:
+        date_key = label[:10]
+        groups[date_key].append((label, bn))
+
+    items_html = ""
+    for date_key in sorted(groups.keys(), reverse=True):
+        items_html += f'<h3 style="margin:16px 0 8px 0;color:#888;">{date_key}</h3>\n<ul style="margin:0 0 12px 0;padding-left:20px;">\n'
+        for label, bn in groups[date_key]:
+            items_html += f'  <li style="margin:4px 0;"><a href="{bn}" style="color:#4d96ff;">{label}</a></li>\n'
+        items_html += "</ul>\n"
+
+    index_html = f'''<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A股涨跌幅云图 - 历史记录</title>
+<style>
+* {{ margin:0; padding:0; box-sizing:border-box; }}
+body {{ background:#0f0f1a; color:#e0e0e0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif; padding:20px; }}
+h1 {{ font-size:20px; margin-bottom:4px; }}
+h1 span {{ font-size:12px; color:#888; font-weight:400; }}
+a {{ text-decoration:none; }}
+a:hover {{ text-decoration:underline; }}
+</style>
+</head>
+<body>
+<h1>A股涨跌幅云图 <span>— 历史记录</span></h1>
+<p style="color:#666;font-size:11px;margin-bottom:20px;">共 {len(links)} 个云图，自动更新于 {time.strftime("%Y-%m-%d %H:%M:%S")}</p>
+{items_html}
+</body>
+</html>'''
+
+    index_path = os.path.join(BASE_DIR, "index.html")
+    with open(index_path, "w", encoding="utf-8") as f:
+        f.write(index_html)
+    print(f"   index.html 已生成 ({len(links)} 条记录)")
+
+    # --- Git 操作 ---
+    print("🚀 正在推送到 GitHub Pages ...")
+    git_cmds = [
+        ["git", "-C", BASE_DIR, "add", "."],
+        ["git", "-C", BASE_DIR, "commit", "-m", f"auto update {time.strftime('%Y%m%d_%H%M')}"],
+        ["git", "-C", BASE_DIR, "push"],
+    ]
+    for cmd in git_cmds:
+        try:
+            r = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
+            if r.returncode != 0 and "nothing to commit" not in r.stdout + r.stderr:
+                print(f"   ⚠ git {' '.join(cmd[2:])}: {r.stderr.strip()}")
+        except Exception as e:
+            print(f"   ⚠ git 操作失败 ({' '.join(cmd[2:])}): {e}")
+            return
+    print("   ✅ 已推送到 GitHub Pages")
+
+
 def main():
     now = time.localtime()
     date_str = time.strftime("%Y-%m-%d", now)
@@ -410,7 +494,8 @@ def main():
     print()
 
     html = build_html(up, down, gen_time, date_str)
-    fname = f"a_streak_treemap_{date_str}.html"
+    timestamp = time.strftime("%Y%m%d_%H%M", now)
+    fname = f"a_streak_treemap_{timestamp}.html"
     fpath = os.path.join(BASE_DIR, fname)
     with open(fpath, "w", encoding="utf-8") as f:
         f.write(html)
@@ -426,6 +511,9 @@ def main():
     print(f"   涨幅榜: {len(up)} 只 ({len(set(x.get('f100','其他') for x in up))}个行业)")
     print(f"   跌幅榜: {len(down)} 只 ({len(set(x.get('f100','其他') for x in down))}个行业)")
     print(f"   生成时间: {gen_time}")
+
+    # --- 更新 index.html 并推送到 GitHub Pages ---
+    update_index_and_push()
 
 
 if __name__ == "__main__":
