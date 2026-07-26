@@ -23,7 +23,7 @@ OUTPUT_HTML = os.path.join(DATA_DIR, "cross_report.html")
 
 def load_data():
     files = sorted(
-        [f for f in os.listdir(DATA_DIR) if f.startswith(FILE_PREFIX) and f.endswith(".json")],
+        [f for f in os.listdir(DATA_DIR) if f.startswith(FILE_PREFIX) and f.endswith("_1501.json")],
         reverse=True,
     )
     if not files:
@@ -144,6 +144,12 @@ def output_html(dates, all_results, threshold):
     all_json = json.dumps(all_results, ensure_ascii=False)
     dates_json = json.dumps(dates, ensure_ascii=False)
 
+    # 构建下拉框选项
+    select_options = "\n".join(
+        f'<option value="{i}" {"selected" if i == threshold else ""}>{i}</option>'
+        for i in range(1, max_count + 1)
+    )
+
     html = f"""<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -158,10 +164,9 @@ body {{ font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsof
 .header h1 {{ font-size: 20px; margin-bottom: 8px; }}
 .header .meta {{ color: #888; font-size: 13px; line-height: 1.8; }}
 .slider-wrap {{ display:flex; align-items:center; gap:12px; margin-top:10px; }}
-.slider-wrap input[type=range] {{ flex:1; max-width:300px; accent-color:#4d96ff; }}
-.slider-wrap .slider-val {{ font-weight:700; color:#4d96ff; font-size:15px; min-width:24px; text-align:center; }}
 .slider-wrap .slider-label {{ color:#666; font-size:13px; white-space:nowrap; }}
-.table-wrap {{ background: #fff; border-radius: 12px; box-shadow: 0 1px 4px rgba(0,0,0,.06); overflow-x: auto; }}
+.toggle-label {{ display:inline-flex; align-items:center; gap:4px; color:#666; font-size:13px; cursor:pointer; user-select:none; margin-left:16px; }}
+.table-wrap {{ background: #fff; border-radius: 12px; box-shadow: 0 1px 4px rgba(0,0,0,.06); max-height: 100vh; overflow: auto; }}
 table {{ width: 100%; border-collapse: collapse; font-size: 13px; white-space: nowrap; }}
 th {{ background: #f8f9fb; color: #555; font-weight: 600; padding: 10px 8px; border-bottom: 2px solid #e8e8e8; text-align: left; position: sticky; top: 0; z-index: 1; }}
 th.center {{ text-align: center; }}
@@ -177,6 +182,33 @@ tr:hover {{ background: #f8faff; }}
 .missing-section {{ background: #fff; border-radius: 12px; padding: 20px 28px; margin-top: 20px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }}
 .missing-section h2 {{ font-size: 16px; margin-bottom: 12px; color: #555; }}
 .missing-item {{ font-size: 13px; line-height: 2; color: #666; }}
+
+thead th {{
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    background-color: #e9ecef;
+    border-bottom: 2px solid #999;
+}}
+/* 固定第一列 */
+th:first-child,
+td:first-child {{
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    background-color: #f9f9f9;  /* 与背景区分，避免透明 */
+    min-width: 120px;
+}}
+
+/* 固定第二列 */
+th:nth-child(2),
+td:nth-child(2) {{
+    position: sticky;
+    left: 120px;               /* 等于第一列的宽度（min-width） */
+    z-index: 2;
+    background-color: #f9f9f9;
+    min-width: 150px;
+}}
 </style>
 </head>
 <body>
@@ -188,9 +220,11 @@ tr:hover {{ background: #f8faff; }}
 </div>
 <div class="slider-wrap">
   <span class="slider-label">筛选阈值（出现次数）:</span>
-  <input type="range" id="threshSlider" min="1" max="{max_count}" value="{threshold}" oninput="onThreshChange()">
-  <span class="slider-val" id="sliderNum">{threshold}</span>
+  <select id="threshSelect" onchange="onThreshChange()" style="padding:4px 8px;border:1px solid #ddd;border-radius:6px;font-size:14px;color:#4d96ff;font-weight:700;cursor:pointer;">
+{select_options}
+  </select>
   <span class="slider-label">/ {max_count} 天</span>
+  <label class="toggle-label"><input type="checkbox" id="toggleMissing" onchange="onThreshChange()"> 缺勤明细</label>
 </div>
 </div>
 <div class="table-wrap" id="tableWrap">
@@ -222,9 +256,8 @@ function colorClass(v) {{ return v > 0 ? 'up' : (v < 0 ? 'down' : 'zero'); }}
 function signStr(v) {{ return v > 0 ? '▲' : (v < 0 ? '▼' : ''); }}
 
 function onThreshChange() {{
-  var t = parseInt(document.getElementById('threshSlider').value);
+  var t = parseInt(document.getElementById('threshSelect').value);
   document.getElementById('threshVal').textContent = t;
-  document.getElementById('sliderNum').textContent = t;
   var filtered = ALL_DATA.filter(function(r) {{ return r.count >= t; }});
   document.getElementById('matchCount').textContent = filtered.length;
   document.getElementById('footerInfo').textContent = '生成时间: {datetime.now().strftime("%Y-%m-%d %H:%M")} | 共 ' + filtered.length + ' 只股票';
@@ -252,29 +285,23 @@ function onThreshChange() {{
   }});
   document.getElementById('tableBody').innerHTML = html;
 
-  var missed = filtered.filter(function(r) {{ return r.count === t; }});
-  var missHtml = '';
-  if (missed.length > 0) {{
-    missHtml = '<h2>仅出现 ' + t + ' 天的股票 (缺勤明细)</h2>';
-    missed.forEach(function(r) {{
-      missHtml += '<div class="missing-item"><span class="code">' + r.code + '</span> ' + r.name + ': 缺 ' + r.missing.join(', ') + '</div>';
-    }});
-  }}
-  document.getElementById('missingSection').innerHTML = missHtml;
-}}
-
-// 初始缺勤明细
-(function() {{
-  var t = parseInt(document.getElementById('threshSlider').value);
-  var missed = ALL_DATA.filter(function(r) {{ return r.count === t; }});
-  if (missed.length > 0) {{
-    var missHtml = '<h2>仅出现 ' + t + ' 天的股票 (缺勤明细)</h2>';
-    missed.forEach(function(r) {{
-      missHtml += '<div class="missing-item"><span class="code">' + r.code + '</span> ' + r.name + ': 缺 ' + r.missing.join(', ') + '</div>';
-    }});
+  var showMissing = document.getElementById('toggleMissing').checked;
+  if (showMissing) {{
+    var missed = filtered.filter(function(r) {{ return r.count === t; }});
+    var missHtml = '';
+    if (missed.length > 0) {{
+      missHtml = '<h2>仅出现 ' + t + ' 天的股票 (缺勤明细)</h2>';
+      missed.forEach(function(r) {{
+        missHtml += '<div class="missing-item"><span class="code">' + r.code + '</span> ' + r.name + ': 缺 ' + r.missing.join(', ') + '</div>';
+      }});
+    }}
     document.getElementById('missingSection').innerHTML = missHtml;
+    document.getElementById('missingSection').style.display = '';
+  }} else {{
+    document.getElementById('missingSection').innerHTML = '';
+    document.getElementById('missingSection').style.display = 'none';
   }}
-}})();
+}}
 </script>
 </body>
 </html>"""
@@ -284,11 +311,15 @@ function onThreshChange() {{
 
     filtered_count = len(filtered)
     print(f"已生成: {OUTPUT_HTML} (共 {filtered_count} 只股票)")
-    webbrowser.open(f"file://{OUTPUT_HTML}")
+    # webbrowser.open(f"file://{OUTPUT_HTML}")
 
 
 def main():
     all_data = load_data()
+    # print(all_data.keys())
+    recent_dates = sorted(all_data.keys(), reverse=True)[:7]
+    print(recent_dates)
+    all_data = {d: all_data[d] for d in recent_dates}
     threshold = max(1, len(all_data) - 3)
     dates, all_results = analyze(all_data, threshold)
     output_html(dates, all_results, threshold)
