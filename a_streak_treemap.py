@@ -18,6 +18,11 @@ INDUSTRY_COLORS = [
     "#d35400","#7f8c8d","#1abc9c","#e74c3c","#3498db","#9b59b6",
 ]
 
+# 东方财富行情 API 域名，按优先级排列；push2 主域名间歇性返回空，push2delay 为备用
+EASTMONEY_DOMAINS = ["push2.eastmoney.com", "push2delay.eastmoney.com"]
+# 全市场A股过滤条件：深主板 + 创业板 + 沪主板 + 科创板（北交所经修正的 secid 用 ulist 覆盖）
+FS_ALL_A = "m:0+t:6,m:0+t:80,m:1+t:2,m:1+t:23"
+
 
 def curl(url, retries=3):
     for i in range(retries):
@@ -74,6 +79,51 @@ def fetch_stock_list_sina(asc=0, num=300):
     return items
 
 
+def _secid_of(code):
+    """东方财富 secid：沪市(6开头)为 1.，其余(深市0/3、北交所4/8/92)为 0."""
+    return f"1.{code}" if code.startswith("6") else f"0.{code}"
+
+
+def select_working_domain(secids):
+    """探测可用域名，返回第一个能返回数据的域名（push2 优先，push2delay 兜底）"""
+    for d in EASTMONEY_DOMAINS:
+        probe = (f"https://{d}/api/qt/ulist.np/get?fltt=2&secids={','.join(secids[:3])}"
+                 f"&fields=f12,f14,f100")
+        if curl(probe, retries=1):
+            return d
+    return None
+
+
+def fetch_industry_map():
+    """全市场 code->二级行业 映射兜底。用 clist 分页拉取全部A股，多域名轮换。
+    注意 clist 接口单页上限为100条，需按空页判断结束。
+    返回 {code: 行业}，仅覆盖沪深A股（北交所由修正后的 secid 走 ulist 覆盖）。"""
+    ind_map = {}
+    PAGE_SIZE = 100
+    for d in EASTMONEY_DOMAINS:
+        got_all = False
+        for page in range(1, 80):
+            url = (f"https://{d}/api/qt/clist/get?pn={page}&pz={PAGE_SIZE}&po=0&np=1&fltt=2&invt=2"
+                   f"&fid=f3&fs={FS_ALL_A}&fields=f12,f14,f3,f100")
+            resp = curl(url, retries=1)
+            if not resp:
+                break
+            try:
+                data = json.loads(resp).get("data") or {}
+                diff = data.get("diff", [])
+            except json.JSONDecodeError:
+                break
+            if not diff:
+                got_all = True
+                break
+            for it in diff:
+                ind_map[str(it.get("f12"))] = str(it.get("f100") or "")
+            time.sleep(0.15)
+        if got_all and ind_map:
+            break
+    return ind_map
+
+
 def enrich_with_eastmoney(stocks):
     if not stocks:
         return []
@@ -81,33 +131,45 @@ def enrich_with_eastmoney(stocks):
     code_map = {}
     for s in stocks:
         code = s["code"]
-        secid = f"1.{code}" if (code.startswith("6") or code.startswith("9") or
-                                 code.startswith("8") or code.startswith("4") or
-                                 code.startswith("920")) else f"0.{code}"
+        secid = _secid_of(code)
         secids.append(secid)
         code_map[secid] = s
         code_map[f"0.{code}" if secid.startswith("1.") else f"1.{code}"] = s
 
+    domain = select_working_domain(secids)
     for i in range(0, len(secids), 80):
         batch = secids[i:i + 80]
-        url = ("https://push2.eastmoney.com/api/qt/ulist.np/get?"
-               f"fltt=2&secids={','.join(batch)}&fields=f12,f14,f2,f3,f20,f100")
+        if domain is None:
+            break
+        url = (f"https://{domain}/api/qt/ulist.np/get?fltt=2&secids={','.join(batch)}"
+               f"&fields=f12,f14,f2,f3,f20,f100")
         resp = curl(url)
-        if resp:
-            try:
-                data = json.loads(resp)
-                for item in data.get("data", {}).get("diff", []):
-                    code = str(item.get("f12", ""))
-                    for prefix in ("0.", "1."):
-                        sid = prefix + code
-                        if sid in code_map:
-                            s = code_map[sid]
-                            s["f20"] = float(item.get("f20", 0) or 0)
-                            s["f100"] = str(item.get("f100", "") or "")
-                            s["f2"] = float(item.get("f2", 0) or 0)
-            except json.JSONDecodeError:
-                pass
+        if not resp:
+            # 当前域名失效，重新探测（可能切到 push2delay）
+            domain = select_working_domain(secids)
+            continue
+        try:
+            payload = json.loads(resp)
+            data = payload.get("data") if isinstance(payload, dict) else None
+        except json.JSONDecodeError:
+            continue
+        for item in (data or {}).get("diff", []):
+            code = str(item.get("f12", ""))
+            for prefix in ("0.", "1."):
+                sid = prefix + code
+                if sid in code_map:
+                    s = code_map[sid]
+                    s["f20"] = float(item.get("f20", 0) or 0)
+                    s["f100"] = str(item.get("f100", "") or "")
+                    s["f2"] = float(item.get("f2", 0) or 0)
         time.sleep(0.3)
+
+    # 仍缺二级行业的股票：用全市场行业映射兜底
+    missing = [s for s in stocks if not s.get("f100")]
+    if missing:
+        ind_map = fetch_industry_map()
+        for s in missing:
+            s["f100"] = ind_map.get(s["code"], s.get("f100", ""))
 
     enriched = []
     for s in stocks:
