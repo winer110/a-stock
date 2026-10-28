@@ -1,0 +1,1802 @@
+[
+  {
+    "code": "920220",
+    "name": "朗信电气",
+    "changepercent": 30.0,
+    "trade": 54.6
+  },
+  {
+    "code": "920896",
+    "name": "旺成科技",
+    "changepercent": 29.944,
+    "trade": 16.23
+  },
+  {
+    "code": "688137",
+    "name": "近岸蛋白",
+    "changepercent": 20.0,
+    "trade": 127.2
+  },
+  {
+    "code": "300291",
+    "name": "百纳千成",
+    "changepercent": 20.0,
+    "trade": 6.24
+  },
+  {
+    "code": "300613",
+    "name": "富瀚微",
+    "changepercent": 20.0,
+    "trade": 72.48
+  },
+  {
+    "code": "301359",
+    "name": "东南电子",
+    "changepercent": 20.0,
+    "trade": 19.08
+  },
+  {
+    "code": "301488",
+    "name": "豪恩汽电",
+    "changepercent": 19.998,
+    "trade": 97.87
+  },
+  {
+    "code": "688045",
+    "name": "必易微",
+    "changepercent": 19.996,
+    "trade": 55.87
+  },
+  {
+    "code": "301261",
+    "name": "恒工精密",
+    "changepercent": 19.996,
+    "trade": 62.89
+  },
+  {
+    "code": "301080",
+    "name": "百普赛斯",
+    "changepercent": 19.995,
+    "trade": 101.24
+  },
+  {
+    "code": "301525",
+    "name": "儒竞科技",
+    "changepercent": 19.995,
+    "trade": 47.53
+  },
+  {
+    "code": "300006",
+    "name": "莱美药业",
+    "changepercent": 19.952,
+    "trade": 9.92
+  },
+  {
+    "code": "300806",
+    "name": "斯迪克",
+    "changepercent": 19.863,
+    "trade": 43.87
+  },
+  {
+    "code": "688698",
+    "name": "伟创电气",
+    "changepercent": 18.179,
+    "trade": 44.79
+  },
+  {
+    "code": "300223",
+    "name": "君正股份",
+    "changepercent": 18.023,
+    "trade": 111.65
+  },
+  {
+    "code": "300461",
+    "name": "田中精机",
+    "changepercent": 17.857,
+    "trade": 39.6
+  },
+  {
+    "code": "688691",
+    "name": "灿芯股份",
+    "changepercent": 17.788,
+    "trade": 57.41
+  },
+  {
+    "code": "301047",
+    "name": "义翘神州",
+    "changepercent": 17.773,
+    "trade": 119.54
+  },
+  {
+    "code": "688818",
+    "name": "电科蓝天",
+    "changepercent": 17.3,
+    "trade": 41.97
+  },
+  {
+    "code": "688059",
+    "name": "华锐精密",
+    "changepercent": 17.076,
+    "trade": 78.09
+  },
+  {
+    "code": "301086",
+    "name": "鸿富瀚",
+    "changepercent": 16.953,
+    "trade": 134.87
+  },
+  {
+    "code": "688025",
+    "name": "杰普特",
+    "changepercent": 16.571,
+    "trade": 369.88
+  },
+  {
+    "code": "920533",
+    "name": "骏创科技",
+    "changepercent": 16.547,
+    "trade": 19.44
+  },
+  {
+    "code": "688315",
+    "name": "诺禾致源",
+    "changepercent": 16.449,
+    "trade": 19.61
+  },
+  {
+    "code": "301682",
+    "name": "宏明电子",
+    "changepercent": 16.376,
+    "trade": 118.82
+  },
+  {
+    "code": "300984",
+    "name": "金沃股份",
+    "changepercent": 16.215,
+    "trade": 39.06
+  },
+  {
+    "code": "301550",
+    "name": "斯菱智驱",
+    "changepercent": 15.87,
+    "trade": 135.8
+  },
+  {
+    "code": "300780",
+    "name": "德恩精工",
+    "changepercent": 15.5,
+    "trade": 20.79
+  },
+  {
+    "code": "301005",
+    "name": "超捷股份",
+    "changepercent": 15.371,
+    "trade": 57.87
+  },
+  {
+    "code": "301428",
+    "name": "世纪恒通",
+    "changepercent": 15.296,
+    "trade": 43.19
+  },
+  {
+    "code": "301413",
+    "name": "安培龙",
+    "changepercent": 15.241,
+    "trade": 69.94
+  },
+  {
+    "code": "301529",
+    "name": "福赛科技",
+    "changepercent": 15.021,
+    "trade": 169.3
+  },
+  {
+    "code": "688061",
+    "name": "灿瑞科技",
+    "changepercent": 14.743,
+    "trade": 44.44
+  },
+  {
+    "code": "688279",
+    "name": "峰岹科技",
+    "changepercent": 14.695,
+    "trade": 209.96
+  },
+  {
+    "code": "688143",
+    "name": "长盈通",
+    "changepercent": 14.657,
+    "trade": 145.89
+  },
+  {
+    "code": "301052",
+    "name": "果麦文化",
+    "changepercent": 14.638,
+    "trade": 37.2
+  },
+  {
+    "code": "688585",
+    "name": "上纬新材",
+    "changepercent": 14.562,
+    "trade": 177.01
+  },
+  {
+    "code": "301076",
+    "name": "新瀚新材",
+    "changepercent": 14.423,
+    "trade": 22.61
+  },
+  {
+    "code": "301252",
+    "name": "同星科技",
+    "changepercent": 14.137,
+    "trade": 31.73
+  },
+  {
+    "code": "300488",
+    "name": "恒锋工具",
+    "changepercent": 13.902,
+    "trade": 37.28
+  },
+  {
+    "code": "688196",
+    "name": "卓越新能",
+    "changepercent": 13.866,
+    "trade": 34.9
+  },
+  {
+    "code": "688690",
+    "name": "纳微科技",
+    "changepercent": 13.833,
+    "trade": 41.31
+  },
+  {
+    "code": "301369",
+    "name": "联动科技",
+    "changepercent": 13.37,
+    "trade": 90.73
+  },
+  {
+    "code": "688039",
+    "name": "当虹科技",
+    "changepercent": 13.308,
+    "trade": 42.57
+  },
+  {
+    "code": "688210",
+    "name": "统联精密",
+    "changepercent": 13.305,
+    "trade": 26.74
+  },
+  {
+    "code": "301603",
+    "name": "乔锋智能",
+    "changepercent": 13.295,
+    "trade": 107.63
+  },
+  {
+    "code": "688368",
+    "name": "晶丰明源",
+    "changepercent": 13.25,
+    "trade": 96.58
+  },
+  {
+    "code": "301366",
+    "name": "一博科技",
+    "changepercent": 13.148,
+    "trade": 54.99
+  },
+  {
+    "code": "301218",
+    "name": "华是科技",
+    "changepercent": 12.857,
+    "trade": 63.2
+  },
+  {
+    "code": "688383",
+    "name": "新益昌",
+    "changepercent": 12.824,
+    "trade": 90.0
+  },
+  {
+    "code": "300969",
+    "name": "恒帅股份",
+    "changepercent": 12.578,
+    "trade": 76.08
+  },
+  {
+    "code": "300718",
+    "name": "长盛轴承",
+    "changepercent": 12.525,
+    "trade": 55.7
+  },
+  {
+    "code": "300787",
+    "name": "海能实业",
+    "changepercent": 12.414,
+    "trade": 11.41
+  },
+  {
+    "code": "688293",
+    "name": "奥浦迈",
+    "changepercent": 12.408,
+    "trade": 60.79
+  },
+  {
+    "code": "301232",
+    "name": "飞沃科技",
+    "changepercent": 12.402,
+    "trade": 68.88
+  },
+  {
+    "code": "688785",
+    "name": "恒运昌",
+    "changepercent": 12.32,
+    "trade": 280.99
+  },
+  {
+    "code": "300626",
+    "name": "华瑞股份",
+    "changepercent": 12.299,
+    "trade": 27.21
+  },
+  {
+    "code": "300684",
+    "name": "中石科技",
+    "changepercent": 12.169,
+    "trade": 74.11
+  },
+  {
+    "code": "300990",
+    "name": "同飞股份",
+    "changepercent": 12.012,
+    "trade": 90.17
+  },
+  {
+    "code": "002731",
+    "name": "萃华退",
+    "changepercent": 12.0,
+    "trade": 0.28
+  },
+  {
+    "code": "300671",
+    "name": "富满微",
+    "changepercent": 11.84,
+    "trade": 43.45
+  },
+  {
+    "code": "300042",
+    "name": "朗科科技",
+    "changepercent": 11.833,
+    "trade": 30.81
+  },
+  {
+    "code": "920378",
+    "name": "泰德股份",
+    "changepercent": 11.823,
+    "trade": 7.85
+  },
+  {
+    "code": "688102",
+    "name": "斯瑞新材",
+    "changepercent": 11.632,
+    "trade": 26.68
+  },
+  {
+    "code": "688667",
+    "name": "菱电电控",
+    "changepercent": 11.6,
+    "trade": 108.81
+  },
+  {
+    "code": "300473",
+    "name": "德尔股份",
+    "changepercent": 11.477,
+    "trade": 43.03
+  },
+  {
+    "code": "300331",
+    "name": "苏大维格",
+    "changepercent": 11.233,
+    "trade": 33.37
+  },
+  {
+    "code": "688302",
+    "name": "海创药业",
+    "changepercent": 11.231,
+    "trade": 32.09
+  },
+  {
+    "code": "688536",
+    "name": "思瑞浦",
+    "changepercent": 11.22,
+    "trade": 288.06
+  },
+  {
+    "code": "300147",
+    "name": "*ST香雪",
+    "changepercent": 11.134,
+    "trade": 5.39
+  },
+  {
+    "code": "688798",
+    "name": "艾为电子",
+    "changepercent": 11.133,
+    "trade": 56.9
+  },
+  {
+    "code": "301225",
+    "name": "恒勃股份",
+    "changepercent": 11.115,
+    "trade": 71.08
+  },
+  {
+    "code": "688766",
+    "name": "普冉股份",
+    "changepercent": 11.095,
+    "trade": 291.27
+  },
+  {
+    "code": "688026",
+    "name": "洁特生物",
+    "changepercent": 10.876,
+    "trade": 24.06
+  },
+  {
+    "code": "920045",
+    "name": "蘅东光",
+    "changepercent": 10.853,
+    "trade": 399.68
+  },
+  {
+    "code": "688105",
+    "name": "诺唯赞",
+    "changepercent": 10.667,
+    "trade": 22.72
+  },
+  {
+    "code": "300342",
+    "name": "天银机电",
+    "changepercent": 10.609,
+    "trade": 26.9
+  },
+  {
+    "code": "300715",
+    "name": "凯伦股份",
+    "changepercent": 10.492,
+    "trade": 13.69
+  },
+  {
+    "code": "301119",
+    "name": "正强股份",
+    "changepercent": 10.468,
+    "trade": 31.66
+  },
+  {
+    "code": "300986",
+    "name": "志特新材",
+    "changepercent": 10.425,
+    "trade": 10.91
+  },
+  {
+    "code": "688835",
+    "name": "高凯技术",
+    "changepercent": 10.268,
+    "trade": 294.25
+  },
+  {
+    "code": "300439",
+    "name": "美康生物",
+    "changepercent": 10.22,
+    "trade": 10.03
+  },
+  {
+    "code": "301275",
+    "name": "汉朔科技",
+    "changepercent": 10.213,
+    "trade": 41.44
+  },
+  {
+    "code": "688265",
+    "name": "南模生物",
+    "changepercent": 10.2,
+    "trade": 49.59
+  },
+  {
+    "code": "688125",
+    "name": "安达智能",
+    "changepercent": 10.187,
+    "trade": 97.35
+  },
+  {
+    "code": "600715",
+    "name": "文投控股",
+    "changepercent": 10.16,
+    "trade": 2.06
+  },
+  {
+    "code": "301716",
+    "name": "鸿富诚",
+    "changepercent": 10.117,
+    "trade": 451.8
+  },
+  {
+    "code": "600173",
+    "name": "卧龙新能",
+    "changepercent": 10.101,
+    "trade": 5.45
+  },
+  {
+    "code": "301373",
+    "name": "凌玮科技",
+    "changepercent": 10.098,
+    "trade": 89.62
+  },
+  {
+    "code": "300900",
+    "name": "广联航空",
+    "changepercent": 10.084,
+    "trade": 20.85
+  },
+  {
+    "code": "600828",
+    "name": "茂业商业",
+    "changepercent": 10.067,
+    "trade": 4.92
+  },
+  {
+    "code": "603135",
+    "name": "中重科技",
+    "changepercent": 10.064,
+    "trade": 8.64
+  },
+  {
+    "code": "688090",
+    "name": "瑞松科技",
+    "changepercent": 10.06,
+    "trade": 57.0
+  },
+  {
+    "code": "600078",
+    "name": "澄星股份",
+    "changepercent": 10.047,
+    "trade": 9.42
+  },
+  {
+    "code": "301630",
+    "name": "同宇新材",
+    "changepercent": 10.045,
+    "trade": 171.88
+  },
+  {
+    "code": "603006",
+    "name": "联明股份",
+    "changepercent": 10.041,
+    "trade": 10.74
+  },
+  {
+    "code": "603633",
+    "name": "徕木股份",
+    "changepercent": 10.035,
+    "trade": 6.36
+  },
+  {
+    "code": "002962",
+    "name": "五方光电",
+    "changepercent": 10.034,
+    "trade": 12.83
+  },
+  {
+    "code": "002915",
+    "name": "中欣氟材",
+    "changepercent": 10.027,
+    "trade": 16.02
+  },
+  {
+    "code": "002164",
+    "name": "宁波东力",
+    "changepercent": 10.026,
+    "trade": 16.9
+  },
+  {
+    "code": "603037",
+    "name": "凯众股份",
+    "changepercent": 10.025,
+    "trade": 13.06
+  },
+  {
+    "code": "603226",
+    "name": "菲林格尔",
+    "changepercent": 10.023,
+    "trade": 24.26
+  },
+  {
+    "code": "600601",
+    "name": "方正科技",
+    "changepercent": 10.021,
+    "trade": 10.32
+  },
+  {
+    "code": "003028",
+    "name": "振邦智能",
+    "changepercent": 10.021,
+    "trade": 25.91
+  },
+  {
+    "code": "603081",
+    "name": "大丰实业",
+    "changepercent": 10.019,
+    "trade": 11.31
+  },
+  {
+    "code": "000559",
+    "name": "万向钱潮",
+    "changepercent": 10.017,
+    "trade": 13.18
+  },
+  {
+    "code": "603131",
+    "name": "上海沪工",
+    "changepercent": 10.015,
+    "trade": 14.5
+  },
+  {
+    "code": "002862",
+    "name": "实丰文化",
+    "changepercent": 10.014,
+    "trade": 15.38
+  },
+  {
+    "code": "001219",
+    "name": "青岛食品",
+    "changepercent": 10.013,
+    "trade": 16.48
+  },
+  {
+    "code": "603533",
+    "name": "掌阅科技",
+    "changepercent": 10.008,
+    "trade": 28.03
+  },
+  {
+    "code": "605288",
+    "name": "凯迪股份",
+    "changepercent": 10.008,
+    "trade": 65.4
+  },
+  {
+    "code": "002636",
+    "name": "金安国纪",
+    "changepercent": 10.008,
+    "trade": 58.59
+  },
+  {
+    "code": "002879",
+    "name": "长缆科技",
+    "changepercent": 10.007,
+    "trade": 14.95
+  },
+  {
+    "code": "001296",
+    "name": "长江材料",
+    "changepercent": 10.005,
+    "trade": 20.23
+  },
+  {
+    "code": "002975",
+    "name": "博杰股份",
+    "changepercent": 10.003,
+    "trade": 85.12
+  },
+  {
+    "code": "605488",
+    "name": "福莱新材",
+    "changepercent": 10.002,
+    "trade": 48.61
+  },
+  {
+    "code": "001400",
+    "name": "江顺科技",
+    "changepercent": 10.002,
+    "trade": 88.31
+  },
+  {
+    "code": "600252",
+    "name": "中恒集团",
+    "changepercent": 10.0,
+    "trade": 2.31
+  },
+  {
+    "code": "603061",
+    "name": "金海通",
+    "changepercent": 10.0,
+    "trade": 260.15
+  },
+  {
+    "code": "603109",
+    "name": "神驰机电",
+    "changepercent": 10.0,
+    "trade": 17.93
+  },
+  {
+    "code": "603418",
+    "name": "友升股份",
+    "changepercent": 10.0,
+    "trade": 44.99
+  },
+  {
+    "code": "603626",
+    "name": "科森科技",
+    "changepercent": 10.0,
+    "trade": 27.83
+  },
+  {
+    "code": "603680",
+    "name": "今创集团",
+    "changepercent": 10.0,
+    "trade": 11.33
+  },
+  {
+    "code": "605566",
+    "name": "福莱蒽特",
+    "changepercent": 10.0,
+    "trade": 28.6
+  },
+  {
+    "code": "002534",
+    "name": "西子洁能",
+    "changepercent": 10.0,
+    "trade": 15.4
+  },
+  {
+    "code": "002472",
+    "name": "双环传动",
+    "changepercent": 9.998,
+    "trade": 45.55
+  },
+  {
+    "code": "603868",
+    "name": "飞科电器",
+    "changepercent": 9.997,
+    "trade": 34.22
+  },
+  {
+    "code": "603920",
+    "name": "世运电路",
+    "changepercent": 9.997,
+    "trade": 37.85
+  },
+  {
+    "code": "001270",
+    "name": "铖昌科技",
+    "changepercent": 9.996,
+    "trade": 80.0
+  },
+  {
+    "code": "603992",
+    "name": "松霖科技",
+    "changepercent": 9.995,
+    "trade": 22.67
+  },
+  {
+    "code": "002741",
+    "name": "光华科技",
+    "changepercent": 9.995,
+    "trade": 20.25
+  },
+  {
+    "code": "603926",
+    "name": "铁流股份",
+    "changepercent": 9.994,
+    "trade": 17.06
+  },
+  {
+    "code": "000678",
+    "name": "襄阳轴承",
+    "changepercent": 9.994,
+    "trade": 17.61
+  },
+  {
+    "code": "002816",
+    "name": "*ST和科",
+    "changepercent": 9.994,
+    "trade": 17.94
+  },
+  {
+    "code": "603219",
+    "name": "富佳股份",
+    "changepercent": 9.992,
+    "trade": 13.21
+  },
+  {
+    "code": "603667",
+    "name": "五洲新春",
+    "changepercent": 9.991,
+    "trade": 49.98
+  },
+  {
+    "code": "002265",
+    "name": "建设工业",
+    "changepercent": 9.989,
+    "trade": 20.92
+  },
+  {
+    "code": "603897",
+    "name": "长城科技",
+    "changepercent": 9.988,
+    "trade": 26.43
+  },
+  {
+    "code": "002708",
+    "name": "光洋股份",
+    "changepercent": 9.988,
+    "trade": 18.94
+  },
+  {
+    "code": "002943",
+    "name": "宇晶股份",
+    "changepercent": 9.987,
+    "trade": 25.11
+  },
+  {
+    "code": "605060",
+    "name": "联德股份",
+    "changepercent": 9.986,
+    "trade": 32.16
+  },
+  {
+    "code": "603612",
+    "name": "索通发展",
+    "changepercent": 9.972,
+    "trade": 15.88
+  },
+  {
+    "code": "002889",
+    "name": "东方嘉盛",
+    "changepercent": 9.972,
+    "trade": 15.44
+  },
+  {
+    "code": "301230",
+    "name": "泓博医药",
+    "changepercent": 9.968,
+    "trade": 30.89
+  },
+  {
+    "code": "002526",
+    "name": "山东矿机",
+    "changepercent": 9.963,
+    "trade": 2.98
+  },
+  {
+    "code": "688160",
+    "name": "步科股份",
+    "changepercent": 9.958,
+    "trade": 108.99
+  },
+  {
+    "code": "000554",
+    "name": "泰山石油",
+    "changepercent": 9.95,
+    "trade": 6.63
+  },
+  {
+    "code": "688323",
+    "name": "瑞华泰",
+    "changepercent": 9.945,
+    "trade": 20.12
+  },
+  {
+    "code": "605366",
+    "name": "宏柏新材",
+    "changepercent": 9.943,
+    "trade": 7.74
+  },
+  {
+    "code": "300811",
+    "name": "铂科新材",
+    "changepercent": 9.939,
+    "trade": 72.12
+  },
+  {
+    "code": "000670",
+    "name": "盈方微",
+    "changepercent": 9.938,
+    "trade": 7.08
+  },
+  {
+    "code": "601956",
+    "name": "东贝集团",
+    "changepercent": 9.928,
+    "trade": 6.09
+  },
+  {
+    "code": "688689",
+    "name": "银河微电",
+    "changepercent": 9.914,
+    "trade": 37.03
+  },
+  {
+    "code": "002172",
+    "name": "澳洋健康",
+    "changepercent": 9.91,
+    "trade": 4.88
+  },
+  {
+    "code": "300980",
+    "name": "祥源新材",
+    "changepercent": 9.812,
+    "trade": 15.78
+  },
+  {
+    "code": "300814",
+    "name": "中富电路",
+    "changepercent": 9.775,
+    "trade": 102.87
+  },
+  {
+    "code": "300529",
+    "name": "健帆生物",
+    "changepercent": 9.608,
+    "trade": 16.77
+  },
+  {
+    "code": "688046",
+    "name": "药康生物",
+    "changepercent": 9.594,
+    "trade": 29.13
+  },
+  {
+    "code": "688356",
+    "name": "键凯科技",
+    "changepercent": 9.508,
+    "trade": 81.54
+  },
+  {
+    "code": "688286",
+    "name": "敏芯股份",
+    "changepercent": 9.498,
+    "trade": 67.79
+  },
+  {
+    "code": "688300",
+    "name": "联瑞新材",
+    "changepercent": 9.49,
+    "trade": 91.61
+  },
+  {
+    "code": "688607",
+    "name": "康众科技",
+    "changepercent": 9.387,
+    "trade": 33.91
+  },
+  {
+    "code": "688185",
+    "name": "康希诺",
+    "changepercent": 9.376,
+    "trade": 78.86
+  },
+  {
+    "code": "002149",
+    "name": "西部材料",
+    "changepercent": 9.368,
+    "trade": 29.77
+  },
+  {
+    "code": "002150",
+    "name": "正泰电源",
+    "changepercent": 9.351,
+    "trade": 18.71
+  },
+  {
+    "code": "688836",
+    "name": "宇树科技",
+    "changepercent": 9.344,
+    "trade": 699.76
+  },
+  {
+    "code": "300161",
+    "name": "华中数控",
+    "changepercent": 9.296,
+    "trade": 26.69
+  },
+  {
+    "code": "301160",
+    "name": "翔楼新材",
+    "changepercent": 9.295,
+    "trade": 36.92
+  },
+  {
+    "code": "603179",
+    "name": "新泉股份",
+    "changepercent": 9.282,
+    "trade": 44.15
+  },
+  {
+    "code": "688097",
+    "name": "博众精工",
+    "changepercent": 9.253,
+    "trade": 48.53
+  },
+  {
+    "code": "301626",
+    "name": "苏州天脉",
+    "changepercent": 9.216,
+    "trade": 237.01
+  },
+  {
+    "code": "300258",
+    "name": "精锻科技",
+    "changepercent": 9.203,
+    "trade": 9.73
+  },
+  {
+    "code": "300421",
+    "name": "力星股份",
+    "changepercent": 9.157,
+    "trade": 18.12
+  },
+  {
+    "code": "688392",
+    "name": "骄成超声",
+    "changepercent": 9.073,
+    "trade": 116.49
+  },
+  {
+    "code": "688270",
+    "name": "ST臻镭",
+    "changepercent": 9.057,
+    "trade": 49.61
+  },
+  {
+    "code": "301595",
+    "name": "太力科技",
+    "changepercent": 9.005,
+    "trade": 42.73
+  },
+  {
+    "code": "688419",
+    "name": "耐科装备",
+    "changepercent": 9.0,
+    "trade": 38.15
+  },
+  {
+    "code": "688595",
+    "name": "芯海科技",
+    "changepercent": 8.997,
+    "trade": 29.56
+  },
+  {
+    "code": "688485",
+    "name": "九州一轨",
+    "changepercent": 8.974,
+    "trade": 85.0
+  },
+  {
+    "code": "688114",
+    "name": "华大智造",
+    "changepercent": 8.938,
+    "trade": 57.77
+  },
+  {
+    "code": "301446",
+    "name": "福事特",
+    "changepercent": 8.929,
+    "trade": 37.33
+  },
+  {
+    "code": "000410",
+    "name": "沈阳机床",
+    "changepercent": 8.917,
+    "trade": 5.13
+  },
+  {
+    "code": "300503",
+    "name": "昊志机电",
+    "changepercent": 8.842,
+    "trade": 65.49
+  },
+  {
+    "code": "603119",
+    "name": "浙江荣泰",
+    "changepercent": 8.807,
+    "trade": 61.4
+  },
+  {
+    "code": "688220",
+    "name": "翱捷科技",
+    "changepercent": 8.806,
+    "trade": 89.33
+  },
+  {
+    "code": "605287",
+    "name": "德才股份",
+    "changepercent": 8.795,
+    "trade": 47.87
+  },
+  {
+    "code": "301166",
+    "name": "优宁维",
+    "changepercent": 8.772,
+    "trade": 31.0
+  },
+  {
+    "code": "301678",
+    "name": "新恒汇",
+    "changepercent": 8.733,
+    "trade": 48.56
+  },
+  {
+    "code": "300100",
+    "name": "双林股份",
+    "changepercent": 8.727,
+    "trade": 22.3
+  },
+  {
+    "code": "688716",
+    "name": "中研股份",
+    "changepercent": 8.707,
+    "trade": 25.97
+  },
+  {
+    "code": "002683",
+    "name": "广东宏大",
+    "changepercent": 8.69,
+    "trade": 32.02
+  },
+  {
+    "code": "300428",
+    "name": "立中集团",
+    "changepercent": 8.687,
+    "trade": 21.52
+  },
+  {
+    "code": "002870",
+    "name": "香山股份",
+    "changepercent": 8.673,
+    "trade": 39.97
+  },
+  {
+    "code": "301309",
+    "name": "万得凯",
+    "changepercent": 8.628,
+    "trade": 29.84
+  },
+  {
+    "code": "300236",
+    "name": "上海新阳",
+    "changepercent": 8.607,
+    "trade": 74.07
+  },
+  {
+    "code": "688758",
+    "name": "赛分科技",
+    "changepercent": 8.605,
+    "trade": 22.97
+  },
+  {
+    "code": "603727",
+    "name": "博迈科",
+    "changepercent": 8.601,
+    "trade": 21.34
+  },
+  {
+    "code": "300953",
+    "name": "震裕科技",
+    "changepercent": 8.595,
+    "trade": 91.98
+  },
+  {
+    "code": "300486",
+    "name": "东杰智能",
+    "changepercent": 8.592,
+    "trade": 19.21
+  },
+  {
+    "code": "688535",
+    "name": "华海诚科",
+    "changepercent": 8.553,
+    "trade": 72.47
+  },
+  {
+    "code": "301333",
+    "name": "诺思格",
+    "changepercent": 8.544,
+    "trade": 56.28
+  },
+  {
+    "code": "603303",
+    "name": "得邦照明",
+    "changepercent": 8.54,
+    "trade": 29.36
+  },
+  {
+    "code": "920125",
+    "name": "鸿仕达",
+    "changepercent": 8.504,
+    "trade": 121.47
+  },
+  {
+    "code": "600114",
+    "name": "东睦股份",
+    "changepercent": 8.447,
+    "trade": 23.75
+  },
+  {
+    "code": "300308",
+    "name": "中际旭创",
+    "changepercent": 8.44,
+    "trade": 625.7
+  },
+  {
+    "code": "301092",
+    "name": "争光股份",
+    "changepercent": 8.426,
+    "trade": 45.04
+  },
+  {
+    "code": "301392",
+    "name": "汇成真空",
+    "changepercent": 8.408,
+    "trade": 113.85
+  },
+  {
+    "code": "300119",
+    "name": "瑞普生物",
+    "changepercent": 8.399,
+    "trade": 16.52
+  },
+  {
+    "code": "603516",
+    "name": "淳中科技",
+    "changepercent": 8.349,
+    "trade": 65.02
+  },
+  {
+    "code": "300604",
+    "name": "长川科技",
+    "changepercent": 8.324,
+    "trade": 189.09
+  },
+  {
+    "code": "688222",
+    "name": "成都先导",
+    "changepercent": 8.271,
+    "trade": 36.26
+  },
+  {
+    "code": "001339",
+    "name": "智微智能",
+    "changepercent": 8.266,
+    "trade": 64.31
+  },
+  {
+    "code": "300819",
+    "name": "聚杰微纤",
+    "changepercent": 8.229,
+    "trade": 36.43
+  },
+  {
+    "code": "600933",
+    "name": "爱柯迪",
+    "changepercent": 8.207,
+    "trade": 15.03
+  },
+  {
+    "code": "300992",
+    "name": "泰福泵业",
+    "changepercent": 8.203,
+    "trade": 23.61
+  },
+  {
+    "code": "603015",
+    "name": "弘讯科技",
+    "changepercent": 8.192,
+    "trade": 10.83
+  },
+  {
+    "code": "301306",
+    "name": "西测测试",
+    "changepercent": 8.154,
+    "trade": 76.0
+  },
+  {
+    "code": "300364",
+    "name": "中文在线",
+    "changepercent": 8.145,
+    "trade": 25.36
+  },
+  {
+    "code": "603886",
+    "name": "元祖股份",
+    "changepercent": 8.11,
+    "trade": 13.73
+  },
+  {
+    "code": "603699",
+    "name": "纽威股份",
+    "changepercent": 8.107,
+    "trade": 37.74
+  },
+  {
+    "code": "002611",
+    "name": "东方精工",
+    "changepercent": 8.066,
+    "trade": 14.47
+  },
+  {
+    "code": "002436",
+    "name": "兴森科技",
+    "changepercent": 8.062,
+    "trade": 33.51
+  },
+  {
+    "code": "301231",
+    "name": "荣信文化",
+    "changepercent": 8.046,
+    "trade": 29.14
+  },
+  {
+    "code": "300706",
+    "name": "阿石创",
+    "changepercent": 8.034,
+    "trade": 38.19
+  },
+  {
+    "code": "002850",
+    "name": "科达利",
+    "changepercent": 8.016,
+    "trade": 163.86
+  },
+  {
+    "code": "002126",
+    "name": "银轮股份",
+    "changepercent": 8.013,
+    "trade": 32.89
+  },
+  {
+    "code": "688519",
+    "name": "南亚新材",
+    "changepercent": 8.004,
+    "trade": 229.25
+  },
+  {
+    "code": "300007",
+    "name": "汉威科技",
+    "changepercent": 7.999,
+    "trade": 39.29
+  },
+  {
+    "code": "688308",
+    "name": "欧科亿",
+    "changepercent": 7.995,
+    "trade": 64.16
+  },
+  {
+    "code": "300440",
+    "name": "运达科技",
+    "changepercent": 7.993,
+    "trade": 17.7
+  },
+  {
+    "code": "300966",
+    "name": "共同药业",
+    "changepercent": 7.953,
+    "trade": 24.84
+  },
+  {
+    "code": "301210",
+    "name": "金杨精密",
+    "changepercent": 7.943,
+    "trade": 29.76
+  },
+  {
+    "code": "300689",
+    "name": "澄天伟业",
+    "changepercent": 7.922,
+    "trade": 49.86
+  },
+  {
+    "code": "688786",
+    "name": "悦安新材",
+    "changepercent": 7.902,
+    "trade": 22.94
+  },
+  {
+    "code": "300868",
+    "name": "杰美特",
+    "changepercent": 7.901,
+    "trade": 55.72
+  },
+  {
+    "code": "603337",
+    "name": "杰克科技",
+    "changepercent": 7.885,
+    "trade": 47.89
+  },
+  {
+    "code": "688628",
+    "name": "优利德",
+    "changepercent": 7.871,
+    "trade": 70.44
+  },
+  {
+    "code": "688386",
+    "name": "泛亚微透",
+    "changepercent": 7.87,
+    "trade": 53.18
+  },
+  {
+    "code": "301246",
+    "name": "宏源药业",
+    "changepercent": 7.86,
+    "trade": 16.33
+  },
+  {
+    "code": "920298",
+    "name": "腾信精密",
+    "changepercent": 7.854,
+    "trade": 71.68
+  },
+  {
+    "code": "600351",
+    "name": "亚宝药业",
+    "changepercent": 7.843,
+    "trade": 7.15
+  },
+  {
+    "code": "301510",
+    "name": "固高科技",
+    "changepercent": 7.843,
+    "trade": 27.5
+  },
+  {
+    "code": "688181",
+    "name": "八亿时空",
+    "changepercent": 7.822,
+    "trade": 34.6
+  },
+  {
+    "code": "688539",
+    "name": "高华科技",
+    "changepercent": 7.803,
+    "trade": 22.38
+  },
+  {
+    "code": "688655",
+    "name": "迅捷兴",
+    "changepercent": 7.789,
+    "trade": 48.99
+  },
+  {
+    "code": "688103",
+    "name": "国力电子",
+    "changepercent": 7.783,
+    "trade": 64.67
+  },
+  {
+    "code": "301093",
+    "name": "华兰股份",
+    "changepercent": 7.781,
+    "trade": 51.39
+  },
+  {
+    "code": "603009",
+    "name": "北特科技",
+    "changepercent": 7.755,
+    "trade": 52.8
+  },
+  {
+    "code": "688816",
+    "name": "易思维",
+    "changepercent": 7.753,
+    "trade": 46.7
+  },
+  {
+    "code": "601208",
+    "name": "东材科技",
+    "changepercent": 7.75,
+    "trade": 37.4
+  },
+  {
+    "code": "603270",
+    "name": "金帝股份",
+    "changepercent": 7.749,
+    "trade": 27.67
+  },
+  {
+    "code": "605198",
+    "name": "安德利",
+    "changepercent": 7.739,
+    "trade": 56.8
+  },
+  {
+    "code": "300415",
+    "name": "伊之密",
+    "changepercent": 7.733,
+    "trade": 18.39
+  },
+  {
+    "code": "688479",
+    "name": "友车科技",
+    "changepercent": 7.689,
+    "trade": 28.43
+  },
+  {
+    "code": "301182",
+    "name": "凯旺科技",
+    "changepercent": 7.683,
+    "trade": 46.53
+  },
+  {
+    "code": "300426",
+    "name": "华智数媒",
+    "changepercent": 7.681,
+    "trade": 7.15
+  },
+  {
+    "code": "300224",
+    "name": "正海磁材",
+    "changepercent": 7.679,
+    "trade": 12.2
+  },
+  {
+    "code": "688123",
+    "name": "聚辰股份",
+    "changepercent": 7.672,
+    "trade": 117.05
+  },
+  {
+    "code": "300136",
+    "name": "信维通信",
+    "changepercent": 7.669,
+    "trade": 45.49
+  },
+  {
+    "code": "300315",
+    "name": "掌趣科技",
+    "changepercent": 7.639,
+    "trade": 4.65
+  },
+  {
+    "code": "601799",
+    "name": "星宇股份",
+    "changepercent": 7.637,
+    "trade": 71.32
+  },
+  {
+    "code": "688525",
+    "name": "佰维存储",
+    "changepercent": 7.631,
+    "trade": 162.9
+  },
+  {
+    "code": "301226",
+    "name": "祥明智能",
+    "changepercent": 7.62,
+    "trade": 35.31
+  },
+  {
+    "code": "688710",
+    "name": "益诺思",
+    "changepercent": 7.618,
+    "trade": 89.71
+  },
+  {
+    "code": "002138",
+    "name": "顺络电子",
+    "changepercent": 7.6,
+    "trade": 42.05
+  },
+  {
+    "code": "300817",
+    "name": "双飞集团",
+    "changepercent": 7.598,
+    "trade": 17.56
+  },
+  {
+    "code": "000755",
+    "name": "山西高速",
+    "changepercent": 7.589,
+    "trade": 4.82
+  },
+  {
+    "code": "301257",
+    "name": "普蕊斯",
+    "changepercent": 7.587,
+    "trade": 33.89
+  },
+  {
+    "code": "002283",
+    "name": "天润工业",
+    "changepercent": 7.58,
+    "trade": 7.38
+  },
+  {
+    "code": "002062",
+    "name": "宏润建设",
+    "changepercent": 7.552,
+    "trade": 8.26
+  },
+  {
+    "code": "300358",
+    "name": "楚天科技",
+    "changepercent": 7.541,
+    "trade": 9.27
+  },
+  {
+    "code": "688131",
+    "name": "皓元医药",
+    "changepercent": 7.518,
+    "trade": 83.66
+  },
+  {
+    "code": "688202",
+    "name": "美迪西",
+    "changepercent": 7.516,
+    "trade": 79.39
+  },
+  {
+    "code": "688112",
+    "name": "鼎阳科技",
+    "changepercent": 7.471,
+    "trade": 70.49
+  },
+  {
+    "code": "688623",
+    "name": "双元科技",
+    "changepercent": 7.466,
+    "trade": 61.03
+  },
+  {
+    "code": "002917",
+    "name": "金奥博",
+    "changepercent": 7.453,
+    "trade": 11.39
+  },
+  {
+    "code": "002989",
+    "name": "中天精装",
+    "changepercent": 7.416,
+    "trade": 18.83
+  },
+  {
+    "code": "603986",
+    "name": "兆易创新",
+    "changepercent": 7.406,
+    "trade": 288.9
+  },
+  {
+    "code": "002903",
+    "name": "宇环数控",
+    "changepercent": 7.387,
+    "trade": 27.04
+  },
+  {
+    "code": "300404",
+    "name": "博济医药",
+    "changepercent": 7.383,
+    "trade": 11.2
+  },
+  {
+    "code": "300302",
+    "name": "同有科技",
+    "changepercent": 7.378,
+    "trade": 23.14
+  },
+  {
+    "code": "603728",
+    "name": "鸣志电器",
+    "changepercent": 7.376,
+    "trade": 59.1
+  },
+  {
+    "code": "600523",
+    "name": "贵航股份",
+    "changepercent": 7.365,
+    "trade": 12.1
+  },
+  {
+    "code": "300403",
+    "name": "汉宇集团",
+    "changepercent": 7.343,
+    "trade": 9.21
+  },
+  {
+    "code": "688610",
+    "name": "埃科光电",
+    "changepercent": 7.338,
+    "trade": 76.21
+  },
+  {
+    "code": "300666",
+    "name": "江丰电子",
+    "changepercent": 7.336,
+    "trade": 163.87
+  },
+  {
+    "code": "300111",
+    "name": "向日葵",
+    "changepercent": 7.325,
+    "trade": 3.37
+  },
+  {
+    "code": "688826",
+    "name": "频准激光",
+    "changepercent": 7.309,
+    "trade": 614.88
+  },
+  {
+    "code": "300639",
+    "name": "凯普生物",
+    "changepercent": 7.308,
+    "trade": 6.02
+  },
+  {
+    "code": "300918",
+    "name": "南山智尚",
+    "changepercent": 7.304,
+    "trade": 11.9
+  },
+  {
+    "code": "688605",
+    "name": "先锋精科",
+    "changepercent": 7.293,
+    "trade": 59.88
+  },
+  {
+    "code": "600395",
+    "name": "盘江股份",
+    "changepercent": 7.292,
+    "trade": 5.15
+  },
+  {
+    "code": "000710",
+    "name": "贝瑞基因",
+    "changepercent": 7.283,
+    "trade": 9.87
+  },
+  {
+    "code": "688686",
+    "name": "奥普特",
+    "changepercent": 7.271,
+    "trade": 158.0
+  },
+  {
+    "code": "605003",
+    "name": "众望布艺",
+    "changepercent": 7.27,
+    "trade": 26.56
+  },
+  {
+    "code": "603090",
+    "name": "宏盛股份",
+    "changepercent": 7.266,
+    "trade": 32.33
+  },
+  {
+    "code": "603166",
+    "name": "福达股份",
+    "changepercent": 7.252,
+    "trade": 11.24
+  },
+  {
+    "code": "301337",
+    "name": "亚华电子",
+    "changepercent": 7.249,
+    "trade": 25.89
+  },
+  {
+    "code": "688502",
+    "name": "茂莱光学",
+    "changepercent": 7.248,
+    "trade": 354.99
+  },
+  {
+    "code": "300733",
+    "name": "西菱动力",
+    "changepercent": 7.203,
+    "trade": 13.99
+  }
+]
